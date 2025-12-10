@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Professional Student Resume</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+    body {
+        background: #FDFCF9;
+        font-family: "Inter", sans-serif;
+        transition: 0.3s ease;
+        color: #333;
+    }
+
+    .resume-wrapper {
+        max-width: 1000px;
+        background: #FFFFFF;
+        margin: 40px auto;
+        display: flex;
+        border-radius: 18px;
+        box-shadow: 0px 10px 40px rgba(0,0,0,0.06);
+        overflow: hidden;
+        transition: 0.3s ease;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+        width: 32%;
+        background: #6C63FF;
+        color: #fff;
+        padding: 35px 25px;
+        text-align: center;
+        transition: 0.3s ease;
+    }
+
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+        border-radius: 100%;
+        object-fit: cover;
+        border: 4px solid #fff;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .sidebar h2 {
+        margin-top: 18px;
+        font-size: 1.45rem;
+        font-weight: 700;
+    }
+
+    .sidebar-section {
+        margin-top: 28px;
+        text-align: left;
+        background: rgba(255,255,255,0.08);
+        border-radius: 8px;
+        padding: 12px 10px;
+        transition: 0.3s ease;
+    }
+
+    .sidebar-section h4 {
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+        border-left: 4px solid #FFB6C9;
+        padding-left: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .sidebar-section p,
+    .sidebar-section li {
+        font-size: 0.88rem;
+        color: #fff;
+        margin-bottom: 6px;
+    }
+
+    ul li {
+        list-style: none;
+        position: relative;
+        padding-left: 18px;
+    }
+
+    ul li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #FFB6C9;
+    }
+
+    /* MAIN CONTENT */
+    .content {
+        width: 68%;
+        padding: 40px 45px;
+        transition: 0.3s ease;
+    }
+
+    .section-title {
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-top: 25px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid #6C63FF;
+        color: #6C63FF;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .content p, 
+    .content li {
+        font-size: 0.96rem;
+        color: #333;
+        line-height: 1.5rem;
+        margin-bottom: 6px;
+    }
+
+    /* ===== DARK MODE FIXED FULLY ===== */
+    .dark-mode {
+        background: #1c1c1c !important;
+        color: #e1e1e1 !important;
+    }
+
+    .dark-mode .resume-wrapper {
+        background: #2c2c2c !important;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    }
+
+    .dark-mode .sidebar {
+        background: #3a3a3a !important;
+        color: #e1e1e1 !important;
+    }
+
+    .dark-mode .sidebar-section {
+        background: rgba(255,255,255,0.05);
+    }
+
+    .dark-mode .sidebar-section h4,
+    .dark-mode .sidebar-section p,
+    .dark-mode .sidebar-section li,
+    .dark-mode .sidebar h2 {
+        color: #ffffff !important;
+    }
+
+    .dark-mode ul li::before {
+        color: #FFB6C9 !important;
+    }
+
+    /* MAIN CONTENT FIX — ALL TEXT VISIBLE */
+    .dark-mode .content,
+    .dark-mode .content p,
+    .dark-mode .content li,
+    .dark-mode strong,
+    .dark-mode b {
+        color: #e1e1e1 !important;
+    }
+
+    .dark-mode .section-title {
+        color: #BFAAFF !important;
+        border-bottom-color: #BFAAFF !important;
+    }
+
+    .dark-mode .bi {
+        color: #FFB6C9 !important;
+    }
+
+    /* DARK MODE BUTTON */
+    #darkModeBtn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        border-radius: 8px;
+        padding: 8px 14px;
+        z-index: 999;
+        background: #ffffff;
+        border: none;
+        color: #333;
+        font-weight: 600;
+        transition: 0.3s ease;
+    }
+
+    .dark-mode #darkModeBtn {
+        background: #444;
+        color: #fff;
+    }
+
+    /* PRINT */
+    @media print {
+        body { background: #fff; color: #000; padding: 0; }
+        #darkModeBtn, input[type=file] { display: none; }
+        .resume-wrapper { box-shadow: none; border-radius: 0; }
+    }
+</style>
+</head>
+
+<body>
+
+<button id="darkModeBtn">🌙 Dark Mode</button>
+
+<div class="resume-wrapper">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <img id="previewImage" src="ashley.jpg" class="profile-pic" alt="Profile">
+        <input type="file" id="photoUpload" class="form-control mt-3" accept="image/*">
+        <h2>Ashley Michelle W.<br>Begnalen</h2>
+
+        <div class="sidebar-section">
+            <h4><i class="bi bi-envelope-fill"></i> Contact</h4>
+            <p><strong>Email:</strong> ashleymichellebegnalen@gmail.com</p>
+            <p><strong>Phone:</strong> 09169594734</p>
+            <p><strong>Address:</strong> Alangan, Magsingal, Ilocos Sur</p>
+        </div>
+
+        <div class="sidebar-section">
+            <h4><i class="bi bi-tools"></i> Skills</h4>
+            <ul>
+                <li>HTML / CSS / JavaScript</li>
+                <li>Python Basics</li>
+                <li>MS Office</li>
+                <li>Teamwork & Communication</li>
+                <li>Leadership</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content">
+        <h3 class="section-title"><i class="bi bi-person-circle"></i> Profile Summary</h3>
+        <p>
+            Motivated IT student with strong analytical skills and a passion for technology.
+            Seeking internship opportunities to gain hands-on experience and enhance technical abilities.
+        </p>
+
+        <h3 class="section-title"><i class="bi bi-book"></i> Education</h3>
+        <ul>
+            <li><strong>Bachelor of Science in Information Technology</strong> – Ilocos Sur Community College (2023–Present)</li>
+            <li><strong>High School Diploma</strong> Puro National High School (2020-2023)</li>
+            <li><strong>Elementary Schook Diploma</strong> Maguyepyep Elementary School (2010-2017)</li>
+         </ul>
+
+        <h3 class="section-title"><i class="bi bi-folder2-open"></i> Projects</h3>
+        <ul>
+            <li><strong>Portfolio Website:</strong> Created a personal portfolio using HTML, CSS, and JS.</li>
+            <li><strong>School Management App:</strong> Built CRUD system using Python & SQLite.</li>
+        </ul>
+
+        <h3 class="section-title"><i class="bi bi-trophy-fill"></i> Achievements</h3>
+        <ul>
+            <li>First Honorable Mention – Maguyepyep Elementary School</li>
+            <li>Diligence in Studies – Puro National High School</li>
+            <li>Diligence in Studies - Ilocos Sur Community College (Associate in Computer Technology)</li>
+        </ul>
+
+        <h3 class="section-title"><i class="bi bi-people-fill"></i> Extra-Curricular Activities</h3>
+        <ul>
+            <li>Classroom Officer</li>
+            <li>Volunteer – Community Clean-up Drive</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    // PHOTO PREVIEW
+    document.getElementById("photoUpload").addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            document.getElementById("previewImage").src = URL.createObjectURL(file);
+        }
+    });
+
+    // DARK MODE TOGGLE
+    const btn = document.getElementById("darkModeBtn");
+    btn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        btn.textContent = document.body.classList.contains("dark-mode")
+            ? "☀️ Light Mode"
+            : "🌙 Dark Mode";
+    });
+</script>
+
+</body>
+</html>
